@@ -20,7 +20,7 @@ export default class Locations extends Component {
             postal_code: "",
             available: false,
             time_added: "",
-            city: 0,
+            city: "All",
             city_ids: []
         }
     }
@@ -36,7 +36,6 @@ export default class Locations extends Component {
 
     filterLocations() {
         let {
-            locations,
             filteredLocations,
             name,
             email,
@@ -44,7 +43,9 @@ export default class Locations extends Component {
         } = this.state
 
         let tempLocations = [...filteredLocations]
-        city = parseInt(city)
+        if (city !== "All") {
+            city = parseInt(city)
+        }
 
 
         // filter by name 
@@ -58,12 +59,8 @@ export default class Locations extends Component {
         } 
 
         // filter by city 
-        if (city !== 0) {
+        if (city !== "All") {
             tempLocations = tempLocations.filter(location => location.city === city)
-        }
-
-        if (isNaN(city)) {
-            tempLocations = locations
         }
 
         this.setState({
@@ -105,6 +102,16 @@ export default class Locations extends Component {
         </option>
          )
         })
+
+        let cities = [...new Set(this.state.filteredLocations.map(filteredLocation => filteredLocation.city))]
+        cities = ["All", ...cities];
+        cities = cities.map((city, index) => {
+        return (
+        <option value={city} key={index}>
+            {city}
+        </option>
+         )
+        })
         
         return (
             
@@ -130,15 +137,16 @@ export default class Locations extends Component {
                             {emails}
                         </select>
                     </div>
-                    
+
                     <div className="form-control-container">
                         <label htmlFor="city">
                             City ID:
                         </label>
-                        <input name="city" id="city" value={this.props.city}
-                            className="form-control" onChange={this.handleChange} defaultValue={0}>
-                        </input>
-                     </div>
+                        <select name="city" id="city" value={this.props.city}
+                            className="form-control" onChange={this.handleChange}>
+                            {cities}
+                        </select>
+                    </div>
                 </div>
 
                 <div className="locations" >

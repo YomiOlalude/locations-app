@@ -9,8 +9,8 @@ export default class Cities extends Component {
             cities: [],
             filteredCities: [],
             locations: [],
-            code: "",
-            name: "",
+            code: "All",
+            name: "All",
             time_added: "",
         }
     }

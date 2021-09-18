@@ -122,9 +122,27 @@ label {
   text-decoration: none;
   color:black;
 }
+.header-link-home {
+  text-decoration: none;
+  color:black;
+  border: solid rgb(194, 194, 194) 1px;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  width: 40vw;
+}
+
+.home-link {
+  text-decoration: none;
+}
 
 .header-link:hover {
   color:purple;
+  text-decoration: none;
+}
+.header-link-home:hover {
+  color:purple;
+  border: solid black 1px;
 }
 
 .card {
@@ -138,6 +156,13 @@ label {
 .location-container {
   text-align: center;
   padding: 20px;
+}
+
+.home-container {
+  text-align: center;
+  padding: 20px;
+  margin: 70px auto;
+  justify-content: center;
 }
 
 .icon {
