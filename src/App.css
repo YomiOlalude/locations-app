@@ -1,5 +1,6 @@
 body {
   background-color:white;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .locations {
@@ -18,10 +19,16 @@ body {
 
 .location {
   margin: 20px;
-  border: solid rgb(255, 224, 245) 1px;
+  border: solid rgb(255, 200, 238) 1px;
   border-radius: 10px;
   padding: 10px;
 }
+
+.location:hover {
+    border: solid rgb(126, 126, 126) 1px;
+
+}
+
 .cities {
   display: grid;
   text-align: center;
@@ -38,9 +45,12 @@ body {
 
 .city {
   margin: 20px;
-  border: solid rgb(255, 224, 245) 1px;
+  border: solid rgb(255, 200, 238) 1px;
   border-radius: 10px;
   padding: 10px;
+}
+.city:hover {
+  border: solid rgb(126, 126, 126) 1px;
 }
 
 .filter-container {
@@ -106,4 +116,46 @@ label {
 
 .city .city-location {
   font-size: 12px;
+}
+
+.header-link {
+  text-decoration: none;
+  color:black;
+}
+
+.header-link:hover {
+  color:purple;
+}
+
+.card {
+  width: 25vw;
+}
+
+.building {
+  color: gray;
+}
+
+.location-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: rgb(83, 0, 83);
+}
+
+.single-page-name {
+  font-size: 12px;
+  color: gray;
+}
+
+.location-container div {
+  border-bottom: solid rgb(216, 216, 216) 1px;
+  padding: 20px;
+}
+
+.single-page-value {
+  font-size: 15px;
+  font-style: italic;
 }

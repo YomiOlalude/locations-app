@@ -143,8 +143,10 @@ export default class Locations extends Component {
 
                 <div className="locations" >
                     {this.state.locations.map(location => {
+                        let slug = String(location.id)
                         return <Location
                             key={location.id}
+                            slug={slug}
                             name={location.name}
                             rent={location.rent}
                             email={location.email}
@@ -156,6 +158,7 @@ export default class Locations extends Component {
                             status={location.status}
                             time_added={location.time_added}
                             city={location.city}
+                            getLocation={() => this.getLocation(slug)}
                             deleteLocation={() => this.deleteLocation(location)}
                             />
                     })}

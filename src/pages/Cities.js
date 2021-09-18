@@ -119,12 +119,14 @@ export default class Cities extends Component {
 
                 <div className="cities" >
                     {this.state.cities.map(city => {
+                        let slug = String(city.id)
                         let time = new Date(city.time_added)
                         let locations = city.locations.map(location => {
                             return location + " , "
                         })
                         return <City
                             key={city.id}
+                            slug={slug}
                             name={city.name}
                             locations={locations}
                             code={city.code}
